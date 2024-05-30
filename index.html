@@ -29,50 +29,54 @@
         </a>
       </div>
     </nav>
-    <form>
-      <div class="container p-2 mx-5">
-        <div class="d-flex justify-content-evenly">
-          <img src="./assets/img/sh1.jpg" alt="superHero" />
-        </div>
-        <div class="container mx-5 ps-5" style="width: 800px">
-          <div class="container px-5 mx-5">
-            <h1>Encuentra tu SuperHero</h1>
-            <p>Ingresa el número del SuperHero a buscar</p>
-          </div>
-
-          <div class="mb-3 ps-5 mx-5" style="width: 120%">
-            <input
-              id="heroInput"
-              type="number"
-              class="form-control"
-              width="40"
-              id="number"
-              min="1"
-              max="732"
-              step="1"
-            />
-          </div>
-          <div class="px-5 mx-5">
-            <button type="submit" class="btn btn-primary">Buscar</button>
-          </div>
-        </div>
+    <header>
+      <div class="d-flex justify-content-evenly p-3">
+        <img src="./assets/img/sh1.jpg" alt="superHero" />
       </div>
-    </form>
-    <div class="container">
-      <section id="estados">
-        <div class="row" id="heroInfo"></div>
-      </section>
-      <section>
-        <div id="chartContainer" style="height: 300px; width: 100%"></div>
-        <script
-          type="text/javascript"
-          src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"
-        ></script>
-        <script
-          type="text/javascript"
-          src="https://cdn.canvasjs.com/jquery.canvasjs.min.js"
-        ></script>
-      </section>
-    </div>
+    </header>
+    <main>
+      <form>
+        <div class="container ps-5 ms-5">
+          <div class="container mx-5" style="width: 800px">
+            <div class="container mx-5">
+              <h1>Encuentra tu SuperHero</h1>
+              <p>Ingresa el número del SuperHero a buscar</p>
+            </div>
+
+            <div class="mb-3 ps-2 mx-5" style="width: 120%">
+              <input
+                id="heroInput"
+                type="number"
+                class="form-control"
+                width="40"
+                id="number"
+                min="1"
+                max="732"
+                step="1"
+              />
+            </div>
+            <div class="mx-5 ps-2">
+              <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="container pe-5">
+        <section id="estados">
+          <div class="row" id="heroInfo"></div>
+        </section>
+        <section>
+          <div id="chartContainer" style="height: 300px; width: 100%"></div>
+          <script
+            type="text/javascript"
+            src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"
+          ></script>
+          <script
+            type="text/javascript"
+            src="https://cdn.canvasjs.com/jquery.canvasjs.min.js"
+          ></script>
+        </section>
+      </div>
+    </main>
   </body>
 </html>
