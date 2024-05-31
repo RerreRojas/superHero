@@ -10,20 +10,27 @@ $(document).ready(function () {
         console.log(data);
 
         // Verificar que las propiedades existen antes de usarlas
-        let connections =
-        check(data.connections["group-affiliation"], "personal") ;
+        let connections = check(
+          data.connections["group-affiliation"],
+          "personal"
+        );
         let publisher = check(data.biography.publisher, "personal");
-        let occupation = check(data.work.occupation, "personal") ;
-        let firstAppearance =
-        check(data.biography["first-appearance"], "personal") ;
-        let height = check(data.appearance.height.join(", "), "personal") ;
-        let weight = check(data.appearance.weight.join(", "), "personal") ;
-        let aliases = check(data.biography.aliases.join(", "), "personal") ;
+        let occupation = check(data.work.occupation, "personal");
+        let firstAppearance = check(
+          data.biography["first-appearance"],
+          "personal"
+        );
+        let height = check(data.appearance.height.join(", "), "personal");
+        let weight = check(data.appearance.weight.join(", "), "personal");
+        let aliases = check(data.biography.aliases.join(", "), "personal");
 
         $("#heroInfo").html(`
                     <div class="row">
                         <div class="col-md-4 my-auto text-center">
-                            <img id="heroImg" src="${check(data.image.url, "img")}" height="350px" alt="${data.name}" />
+                            <img id="heroImg" src="${check(
+                              data.image.url,
+                              "img"
+                            )}" height="350px" alt="${data.name}" />
                         </div>
                         <div class="col-md-4">
                             <div class="card-body">
@@ -46,12 +53,15 @@ $(document).ready(function () {
 
         // Generar gráfico de estadísticas
         const estadisticas = [
-        { y: check(data.powerstats.intelligence, null), label: "Inteligencia" },
-        { y: check(data.powerstats.strength, null), label: "Fuerza" },
-        { y: check(data.powerstats.speed, null), label: "Velocidad" },
-        { y: check(data.powerstats.durability, null), label: "Resistencia" },
-        { y: check(data.powerstats.power, null), label: "Poder" },
-        { y: check(data.powerstats.combat, null), label: "Combate" },
+          {
+            y: check(data.powerstats.intelligence, null),
+            label: "Inteligencia",
+          },
+          { y: check(data.powerstats.strength, null), label: "Fuerza" },
+          { y: check(data.powerstats.speed, null), label: "Velocidad" },
+          { y: check(data.powerstats.durability, null), label: "Resistencia" },
+          { y: check(data.powerstats.power, null), label: "Poder" },
+          { y: check(data.powerstats.combat, null), label: "Combate" },
         ];
 
         const config = {
@@ -84,14 +94,15 @@ $(document).ready(function () {
   });
 });
 
-function check (dato,type){
-    if (type === "personal"){
-        return dato.startsWith("-") ? "No disponible" : dato ; 
-    } else if (type === "img"){ return dato === "https://www.superherodb.com/pictures2/portraits/10/100/1010.jpg"  ? "https://png.pngtree.com/png-clipart/20230802/original/pngtree-strong-yellow-super-hero-happy-help-illustration-vector-picture-image_9275736.png" : dato ;
-        
-    
-    }
-    else {return dato === "null"  ? Math.ceil(Math.random() * 100) : dato ; }
-    };
-
-
+function check(dato, type) {
+  if (type === "personal") {
+    return dato.startsWith("-") ? "No disponible" : dato;
+  } else if (type === "img") {
+    return dato ===
+      "https://www.superherodb.com/pictures2/portraits/10/100/1010.jpg"
+      ? "https://png.pngtree.com/png-clipart/20230802/original/pngtree-strong-yellow-super-hero-happy-help-illustration-vector-picture-image_9275736.png"
+      : dato;
+  } else {
+    return dato === "null" ? Math.ceil(Math.random() * 100) : dato;
+  }
+}
