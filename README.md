@@ -4,7 +4,7 @@
 
 ## Características
 
-'Buscar superhéroes por nombre o ID.
+'Buscar superhéroes por ID.
 Mostrar detalles del superhéroe, incluyendo imagen, nombre, conexiones, editor, ocupación, primera aparición, altura, peso y alias.
 Mostrar un gráfico circular de las estadísticas de poder del superhéroe.'
 
